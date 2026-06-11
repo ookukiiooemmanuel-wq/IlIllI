@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快點滾蛋</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .poop-emoji {
+            font-size: 120px;
+            margin-bottom: 20px;
+            animation: shake 0.5s infinite alternate;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #ff4d4d;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .get-out-btn {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+            transition: transform 0.1s, background-color 0.2s;
+        }
+
+        .get-out-btn:hover {
+            background-color: #ff1a1a;
+            transform: scale(1.05);
+        }
+
+        .get-out-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* 讓那坨糞動起來的微特效 */
+        @keyframes shake {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poop-emoji">💩</div>
+    
+    <h1>這裡沒你的事，快點滾蛋！</h1>
+    
+    <button class="get-out-btn" onclick="closeWindow()">我有罪，我滾蛋</button>
+
+    <script>
+        function closeWindow() {
+            // 嘗試關閉視窗
+            window.close();
+            
+            // 備用防線：如果瀏覽器因為安全性阻擋 window.close()（通常非 JS 開啟的視窗會被阻擋）
+            // 就直接把頁面導向空白頁，強迫他們離開
+            setTimeout(function() {
+                alert("既然你關不掉，那我直接送你走！");
+                window.location.href = "about:blank";
+            }, 100);
+        }
+    </script>
+
+</body>
+</html>
